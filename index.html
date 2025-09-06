@@ -17,7 +17,7 @@
         </div>
     </nav>
 
-    <div class="container mt-3 " id="colectData">
+    <div class="container mt-3" id="colectData">
         <!-- FORM -->
         <form class="needs-validation" novalidate>
             <!-- ESTOQUE INICIAL -->
@@ -134,7 +134,8 @@
 
             <div class="col">
                 <button type="submit" class="btn btn-secondary mb-5 mt-3">Calcular</button>
-                <button type="submit" onclick="location.reload()" class="clear-btn btn btn-danger mb-5 mt-3">Limpar</button>
+                <button type="submit" onclick="location.reload()"
+                    class="clear-btn btn btn-danger mb-5 mt-3">Limpar</button>
             </div>
 
         </form>
@@ -143,10 +144,13 @@
     </div>
 
     <!-- SHOW RESULTS -->
+<!-- HIDE -->
+    <div class="container mt-2 " id="showResults">
 
-    <div class="container mt-3 hide" id="showResults">
-
-        <button type="submit" id="voltarBtn" class="btn btn-secondary">Voltar</button>
+        <div class="col-12 m-3">
+            <button type="submit" id="voltarBtn" class="btn btn-danger m-1">Voltar</button>
+            <button type="submit" id="formulas" class="btn btn-primary m-1">Formulas</button>
+        </div>
 
         <div class="m-1">
 
@@ -166,43 +170,43 @@
                         <td>1</td>
                         <td>ESTOQUE INICIAL DE MATÉRIAS-PRIMAS</td>
                         <td></td>
-                        <td></td>
+                        <td class="estoque-inicial-materia-prima text-end"></td>
                     </tr>
                     <tr>
                         <td>2. (+)</td>
                         <td>COMPRAS LÍQUIDAS DE MATÉRIAS-PRIMAS</td>
                         <td></td>
-                        <td></td>
+                        <td class="compra-de-materia-prima text-end"></td>
                     </tr>
                     <tr>
                         <td>3. (=)</td>
                         <td>CUSTO DAS MATÉRIAS-PRIMAS DISPONÍVEIS (1+2)</td>
                         <td></td>
-                        <td></td>
+                        <td class="custo-mp-disponivel text-end"></td>
                     </tr>
                     <tr>
                         <td>4. (-)</td>
                         <td>ESTOQUE FINAL DE MATÉRIAS-PRIMAS</td>
                         <td></td>
-                        <td></td>
+                        <td class="estoque-final-materia-prima text-end"></td>
                     </tr>
                     <tr>
                         <td>5. (=)</td>
                         <td>CUSTO DAS MATÉRIAS-PRIMAS APLICADAS (3-4)</td>
                         <td></td>
-                        <td></td>
+                        <td class="custo-materia-prima-aplicado text-end"></td>
                     </tr>
                     <tr>
                         <td>6. (+)</td>
                         <td>MÃO DE OBRA DIRETA</td>
                         <td></td>
-                        <td></td>
+                        <td class="mao-obra-direto text-end"></td>
                     </tr>
                     <tr>
                         <td>7. (=)</td>
                         <td>CUSTO PRIMÁRIO (5+6)</td>
                         <td></td>
-                        <td></td>
+                        <td class="custo-primario text-end"></td>
                     </tr>
                     <tr>
                         <td>8. (+)</td>
@@ -213,32 +217,32 @@
                     <tr>
                         <td class="text-end">8.1</td>
                         <td>MATERIAIS SECUNDÁRIOS</td>
-                        <td></td>
+                        <td class="custo-material-secondario-aplicado text-lef"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="text-end">8.2</td>
                         <td>MATERIAIS DE EMBALAGEM</td>
-                        <td></td>
+                        <td class="custo-material-embalagem-aplicado text-lef"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="text-end">8.3</td>
                         <td>OUTROS MATERIAIS</td>
-                        <td></td>
+                        <td class="custo-material-outros-aplicado text-lef"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="text-end">8.4</td>
                         <td>GASTOS GERAIS DE FABRICAÇÃO DIRETOS</td>
                         <td></td>
-                        <td></td>
+                        <td class="gastos-gerais-producao-direto text-end"></td>
                     </tr>
                     <tr>
                         <td>9. (=)</td>
                         <td>CUSTOS DIRETOS DE FABRICAÇÃO (7+8)</td>
                         <td></td>
-                        <td></td>
+                        <td class="custo-direto-fabricacao text-end"></td>
                     </tr>
                     <tr>
                         <td>10. (+)</td>
