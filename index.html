@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DCPV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">DCPV</span>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <!-- FORM -->
+        <form>
+            <!-- ESTOQUE INICIAL -->
+            <!-- Estoque Inicial de Materia Prima -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="eimp" placeholder="name@example.com">
+                <label for="floatingInput">EiMP</label>
+            </div>
+
+            <!-- Estoque Inicial de Material Secundário -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="eims" placeholder="name@example.com">
+                <label for="floatingInput">EiMS</label>
+            </div>
+
+            <!-- Estoque Inicial de Material de Embalagem -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="eimemb" placeholder="name@example.com">
+                <label for="floatingInput">EiMemb</label>
+            </div>
+
+            <!-- Estoque Inicial de Produtos Acabados -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="eiprodacab" placeholder="name@example.com">
+                <label for="floatingInput">EiProd Acabado</label>
+            </div>
+
+            <!-- Estoque Inicial de Produtos em Eleboração -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="eiprodelab" placeholder="name@example.com">
+                <label for="floatingInput">EiProd Elaboração</label>
+            </div>
+
+            <!-- END OF ESTOQUE INICIAL -->
+
+            <!-- COMPRAS -->
+            <!-- Compra de Materia Prima -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="cmp" placeholder="name@example.com">
+                <label for="floatingInput">CMP</label>
+            </div>
+
+            <!-- Compra de Material Secondário -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="cms" placeholder="name@example.com">
+                <label for="floatingInput">CMS</label>
+            </div>
+
+            <!-- COMPRA MATERIAL DE EMBALAGEM -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="cmemb" placeholder="name@example.com">
+                <label for="floatingInput">CMEmb</label>
+            </div>
+
+            <!-- COMPRA MATERIAL INDIRETO -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="cmindireto" placeholder="name@example.com">
+                <label for="floatingInput">Compra de Materiais Indiretos</label>
+            </div>
+
+            <!-- END OF COMPRAS -->
+
+            <!-- MÃO de OBRA -->
+            <!-- MÃO DE OBRA DIRETA -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="mod" placeholder="name@example.com">
+                <label for="floatingInput">MOD</label>
+            </div>
+
+            <!-- MÃO DE OBRA INDIRETA -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="moi" placeholder="name@example.com">
+                <label for="floatingInput">MOI</label>
+            </div>
+            <!-- END MÃO de OBRA -->
+
+            <!-- Custos INDIRETOS de Fabricação -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="cif" placeholder="name@example.com">
+                <label for="floatingInput">CiF's</label>
+            </div>
+
+            <!-- Estoque final do periodo -->
+
+            <!-- Estoque Final de Materia Prima -->
+             <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="efmp" placeholder="name@example.com">
+                <label for="floatingInput">EFMp</label>
+            </div>
+
+            <!-- Estoque Final de Material Secondário -->
+             <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="efms" placeholder="name@example.com">
+                <label for="floatingInput">EFMs</label>
+            </div>
+
+            <!-- Estoque Final de Material de Embalagem -->
+             <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="efmemb" placeholder="name@example.com">
+                <label for="floatingInput">EFMs</label>
+            </div>
+
+            <!-- Estoque Final de Produção Acabado -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="efpacabado" placeholder="name@example.com">
+                <label for="floatingInput">EFProd Acabado</label>
+            </div>
+
+            <!-- Estoque Final de Produção (Elaboração/Fabricação) -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="efpelab" placeholder="name@example.com">
+                <label for="floatingInput">EFProd Elaboração</label>
+            </div>
+
+            <button type="submit" id="submitBtn" class="btn btn-secondary">Submit</button>
+
+        </form>
+        <!-- END FORM -->
+
+    </div>
+
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/app.js"></script>
+
+</body>
+
+</html>
