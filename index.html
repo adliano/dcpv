@@ -19,35 +19,35 @@
 
     <div class="container mt-3 " id="colectData">
         <!-- FORM -->
-        <form>
+        <form class="needs-validation" novalidate>
             <!-- ESTOQUE INICIAL -->
             <!-- Estoque Inicial de Materia Prima -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="eimp" placeholder="name@example.com">
+                <input type="number" class="form-control" id="eimp" required>
                 <label for="eimp">EiMP</label>
             </div>
 
             <!-- Estoque Inicial de Material Secundário -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="eims" placeholder="name@example.com">
+                <input type="number" class="form-control" id="eims" required>
                 <label for="eims">EiMS</label>
             </div>
 
             <!-- Estoque Inicial de Material de Embalagem -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="eimemb" placeholder="name@example.com">
+                <input type="number" class="form-control" id="eimemb" required>
                 <label for="eimemb">EiMemb</label>
             </div>
 
             <!-- Estoque Inicial de Produtos Acabados -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="eiprodacab" placeholder="name@example.com">
+                <input type="number" class="form-control" id="eiprodacab" required>
                 <label for="eiprodacab">EiProd Acabado</label>
             </div>
 
             <!-- Estoque Inicial de Produtos em Eleboração -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="eiprodelab" placeholder="name@example.com">
+                <input type="number" class="form-control" id="eiprodelab" required>
                 <label for="eiprodelab">EiProd Elaboração</label>
             </div>
 
@@ -56,25 +56,25 @@
             <!-- COMPRAS -->
             <!-- Compra de Materia Prima -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="cmp" placeholder="name@example.com">
+                <input type="number" class="form-control" id="cmp" required>
                 <label for="cmp">CMP</label>
             </div>
 
             <!-- Compra de Material Secondário -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="cms" placeholder="name@example.com">
+                <input type="number" class="form-control" id="cms" required>
                 <label for="cms">CMS</label>
             </div>
 
             <!-- COMPRA MATERIAL DE EMBALAGEM -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="cmemb" placeholder="name@example.com">
+                <input type="number" class="form-control" id="cmemb" required>
                 <label for="cmemb">CMEmb</label>
             </div>
 
             <!-- COMPRA MATERIAL INDIRETO -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="cmindireto" placeholder="name@example.com">
+                <input type="number" class="form-control" id="cmindireto" required>
                 <label for="cmindireto">Compra de Materiais Indiretos</label>
             </div>
 
@@ -83,20 +83,20 @@
             <!-- MÃO de OBRA -->
             <!-- MÃO DE OBRA DIRETA -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="mod" placeholder="name@example.com">
+                <input type="number" class="form-control" id="mod" required>
                 <label for="mod">MOD</label>
             </div>
 
             <!-- MÃO DE OBRA INDIRETA -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="moi" placeholder="name@example.com">
+                <input type="number" class="form-control" id="moi" required>
                 <label for="moi">MOI</label>
             </div>
             <!-- END MÃO de OBRA -->
 
             <!-- Custos INDIRETOS de Fabricação -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="cif" placeholder="name@example.com">
+                <input type="number" class="form-control" id="cif" required>
                 <label for="cif">CiF's</label>
             </div>
 
@@ -104,35 +104,38 @@
 
             <!-- Estoque Final de Materia Prima -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="efmp" placeholder="name@example.com">
+                <input type="number" class="form-control" id="efmp" required>
                 <label for="efmp">EFMp</label>
             </div>
 
             <!-- Estoque Final de Material Secondário -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="efms" placeholder="name@example.com">
+                <input type="number" class="form-control" id="efms" required>
                 <label for="efms">EFMs</label>
             </div>
 
             <!-- Estoque Final de Material de Embalagem -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="efmemb" placeholder="name@example.com">
+                <input type="number" class="form-control" id="efmemb" required>
                 <label for="efmemb">EFMs</label>
             </div>
 
             <!-- Estoque Final de Produção Acabado -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="efpacabado" placeholder="name@example.com">
+                <input type="number" class="form-control" id="efpacabado" required>
                 <label for="efpacabado">EFProd Acabado</label>
             </div>
 
             <!-- Estoque Final de Produção (Elaboração/Fabricação) -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="efpelab" placeholder="name@example.com">
+                <input type="number" class="form-control" id="efpelab" required>
                 <label for="efpelab">EFProd Elaboração</label>
             </div>
 
-            <button type="submit" id="submitBtn" class="btn btn-secondary">Submit</button>
+            <div class="col">
+                <button type="submit" class="btn btn-secondary mb-5 mt-3">Calcular</button>
+                <button type="submit" onclick="location.reload()" class="clear-btn btn btn-danger mb-5 mt-3">Limpar</button>
+            </div>
 
         </form>
         <!-- END FORM -->

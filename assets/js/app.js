@@ -6,7 +6,7 @@ let containerData = document.getElementById('colectData');
 // Get Container that will show results
 let ContainerResults = document.getElementById('showResults');
 // Submit Button
-let submitBtn = document.getElementById('submitBtn');
+// let submitBtn = document.getElementById('submitBtn');
 // Botao de voltar
 let bckBtn = document.getElementById('voltarBtn');
 // Estoque Inical de Materia Prima
@@ -74,19 +74,37 @@ let cpDispVenda = () => Number(cpacab) - Number(eiprodacab);
 let cpv = () => Number(cpDispVenda) - Number(efpelab);
 
 
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+    'use strict'
+    // Fetch the form we want to apply custom Bootstrap validation styles to
+    const form = document.querySelector('.needs-validation');
 
+    form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
 
-submitBtn.onclick = (event) => {
-    // alert(cmpdisp())
-    event.preventDefault();
-    containerData.classList.toggle('hide');
-    ContainerResults.classList.toggle('hide');
+            console.log('Missing data')
+        }
+        else {
+            event.preventDefault();
+            containerData.classList.toggle('hide');
+            ContainerResults.classList.toggle('hide');
 
-    // alert('hello')
-}
+            console.log(eimp.value)
+        }
+
+        form.classList.add('was-validated')
+
+    }, false)
+
+})()
+
 
 bckBtn.onclick = (event) => {
     event.preventDefault();
-    containerData.classList.toggle('hide');
     ContainerResults.classList.toggle('hide');
+    containerData.classList.toggle('hide');
+
 }
