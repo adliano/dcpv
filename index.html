@@ -7,6 +7,7 @@
     <title>DCPV</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -16,38 +17,38 @@
         </div>
     </nav>
 
-    <div class="container mt-3">
+    <div class="container mt-3 " id="colectData">
         <!-- FORM -->
         <form>
             <!-- ESTOQUE INICIAL -->
             <!-- Estoque Inicial de Materia Prima -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="eimp" placeholder="name@example.com">
-                <label for="floatingInput">EiMP</label>
+                <label for="eimp">EiMP</label>
             </div>
 
             <!-- Estoque Inicial de Material Secundário -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="eims" placeholder="name@example.com">
-                <label for="floatingInput">EiMS</label>
+                <label for="eims">EiMS</label>
             </div>
 
             <!-- Estoque Inicial de Material de Embalagem -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="eimemb" placeholder="name@example.com">
-                <label for="floatingInput">EiMemb</label>
+                <label for="eimemb">EiMemb</label>
             </div>
 
             <!-- Estoque Inicial de Produtos Acabados -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="eiprodacab" placeholder="name@example.com">
-                <label for="floatingInput">EiProd Acabado</label>
+                <label for="eiprodacab">EiProd Acabado</label>
             </div>
 
             <!-- Estoque Inicial de Produtos em Eleboração -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="eiprodelab" placeholder="name@example.com">
-                <label for="floatingInput">EiProd Elaboração</label>
+                <label for="eiprodelab">EiProd Elaboração</label>
             </div>
 
             <!-- END OF ESTOQUE INICIAL -->
@@ -56,25 +57,25 @@
             <!-- Compra de Materia Prima -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="cmp" placeholder="name@example.com">
-                <label for="floatingInput">CMP</label>
+                <label for="cmp">CMP</label>
             </div>
 
             <!-- Compra de Material Secondário -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="cms" placeholder="name@example.com">
-                <label for="floatingInput">CMS</label>
+                <label for="cms">CMS</label>
             </div>
 
             <!-- COMPRA MATERIAL DE EMBALAGEM -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="cmemb" placeholder="name@example.com">
-                <label for="floatingInput">CMEmb</label>
+                <label for="cmemb">CMEmb</label>
             </div>
 
             <!-- COMPRA MATERIAL INDIRETO -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="cmindireto" placeholder="name@example.com">
-                <label for="floatingInput">Compra de Materiais Indiretos</label>
+                <label for="cmindireto">Compra de Materiais Indiretos</label>
             </div>
 
             <!-- END OF COMPRAS -->
@@ -83,52 +84,52 @@
             <!-- MÃO DE OBRA DIRETA -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="mod" placeholder="name@example.com">
-                <label for="floatingInput">MOD</label>
+                <label for="mod">MOD</label>
             </div>
 
             <!-- MÃO DE OBRA INDIRETA -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="moi" placeholder="name@example.com">
-                <label for="floatingInput">MOI</label>
+                <label for="moi">MOI</label>
             </div>
             <!-- END MÃO de OBRA -->
 
             <!-- Custos INDIRETOS de Fabricação -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="cif" placeholder="name@example.com">
-                <label for="floatingInput">CiF's</label>
+                <label for="cif">CiF's</label>
             </div>
 
             <!-- Estoque final do periodo -->
 
             <!-- Estoque Final de Materia Prima -->
-             <div class="form-floating mb-3">
+            <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="efmp" placeholder="name@example.com">
-                <label for="floatingInput">EFMp</label>
+                <label for="efmp">EFMp</label>
             </div>
 
             <!-- Estoque Final de Material Secondário -->
-             <div class="form-floating mb-3">
+            <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="efms" placeholder="name@example.com">
-                <label for="floatingInput">EFMs</label>
+                <label for="efms">EFMs</label>
             </div>
 
             <!-- Estoque Final de Material de Embalagem -->
-             <div class="form-floating mb-3">
+            <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="efmemb" placeholder="name@example.com">
-                <label for="floatingInput">EFMs</label>
+                <label for="efmemb">EFMs</label>
             </div>
 
             <!-- Estoque Final de Produção Acabado -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="efpacabado" placeholder="name@example.com">
-                <label for="floatingInput">EFProd Acabado</label>
+                <label for="efpacabado">EFProd Acabado</label>
             </div>
 
             <!-- Estoque Final de Produção (Elaboração/Fabricação) -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="efpelab" placeholder="name@example.com">
-                <label for="floatingInput">EFProd Elaboração</label>
+                <label for="efpelab">EFProd Elaboração</label>
             </div>
 
             <button type="submit" id="submitBtn" class="btn btn-secondary">Submit</button>
@@ -136,6 +137,188 @@
         </form>
         <!-- END FORM -->
 
+    </div>
+
+    <!-- SHOW RESULTS -->
+
+    <div class="container mt-3 hide" id="showResults">
+
+        <button type="submit" id="voltarBtn" class="btn btn-secondary">Voltar</button>
+
+        <div class="m-1">
+
+            <table class="table table-bordered">
+
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th scope="col">DEMONSTRAÇÃO DO CUSTO DOS PRODUTOS VENDIDOS</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Valor</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>ESTOQUE INICIAL DE MATÉRIAS-PRIMAS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2. (+)</td>
+                        <td>COMPRAS LÍQUIDAS DE MATÉRIAS-PRIMAS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3. (=)</td>
+                        <td>CUSTO DAS MATÉRIAS-PRIMAS DISPONÍVEIS (1+2)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4. (-)</td>
+                        <td>ESTOQUE FINAL DE MATÉRIAS-PRIMAS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5. (=)</td>
+                        <td>CUSTO DAS MATÉRIAS-PRIMAS APLICADAS (3-4)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6. (+)</td>
+                        <td>MÃO DE OBRA DIRETA</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7. (=)</td>
+                        <td>CUSTO PRIMÁRIO (5+6)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>8. (+)</td>
+                        <td>OUTROS CUSTOS DIRETOS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-end">8.1</td>
+                        <td>MATERIAIS SECUNDÁRIOS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-end">8.2</td>
+                        <td>MATERIAIS DE EMBALAGEM</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-end">8.3</td>
+                        <td>OUTROS MATERIAIS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-end">8.4</td>
+                        <td>GASTOS GERAIS DE FABRICAÇÃO DIRETOS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>9. (=)</td>
+                        <td>CUSTOS DIRETOS DE FABRICAÇÃO (7+8)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10. (+)</td>
+                        <td>CUSTOS INDIRETOS DE FABRICAÇÃO</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-end">10.1</td>
+                        <td>MATERIAIS INDIRETOS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-end">10.2</td>
+                        <td>MÃO DE OBRA INDIRETA</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-end">10.3</td>
+                        <td>GASTOS GERAIS DE FABRICAÇÃO INDIRETOS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>11. (=)</td>
+                        <td>CUSTO DE PRODUÇÃO DO PERÍODO (9+10)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>12. (+)</td>
+                        <td>ESTOQUE INICIAL DE PRODUTOS EM ELABORAÇÃO</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>13. (=)</td>
+                        <td>CUSTO DE PRODUÇÃO (11+12)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>14. (-)</td>
+                        <td>ESTOQUE FINAL DE PRODUTOS EM ELABORAÇÃO</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>15. (=)</td>
+                        <td>CUSTO DA PRODUÇÃO ACABADA NO PERÍODO (13-14)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>16. (+)</td>
+                        <td>ESTOQUE INICIAL DE PRODUTOS ACABADOS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>17 (=)</td>
+                        <td>CUSTO DOS PRODUTOS DISPONÍVEIS PARA VENDA (15+16)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>18. (-)</td>
+                        <td>ESTOQUE FINAL DE PRODUTOS ACABADOS</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>19. (=)</td>
+                        <td>CUSTO DOS PRODUTOS VENDIDOS (17-18)</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
     </div>
 
 

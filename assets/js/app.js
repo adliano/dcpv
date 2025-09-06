@@ -1,8 +1,14 @@
 
 
 // Get variables
-
+// Get Container and set display none to show resuts
+let containerData = document.getElementById('colectData');
+// Get Container that will show results
+let ContainerResults = document.getElementById('showResults');
+// Submit Button
 let submitBtn = document.getElementById('submitBtn');
+// Botao de voltar
+let bckBtn = document.getElementById('voltarBtn');
 // Estoque Inical de Materia Prima
 let eimp = document.getElementById('eimp');
 // Estoque Inical de Material Secundário
@@ -21,13 +27,21 @@ let cms = document.getElementById('cms');
 let cmemb = document.getElementById('cmemb');
 // Compra de Materiais INDIRETOS
 let cmindireto = document.getElementById('cmindireto');
+// Mão de obra direta
 let mod = document.getElementById('mod');
+// Mão de obra Indireta
 let moi = document.getElementById('moi');
+// Custo Indireto de fabricação
 let cif = document.getElementById('cif');
+// Estoque final de materia prima
 let efmp = document.getElementById('efmp');
+// Estoque final de material secondário
 let efms = document.getElementById('efms');
+// Estoque final de material de embalagem
 let efmemb = document.getElementById('efmemb');
+// Estoque final de produto acabado
 let efpacabado = document.getElementById('efpacabado');
+// Estoque final de produto elaborado
 let efpelab = document.getElementById('efpelab');
 
 // 1 Custo de Materia Prima Disponivel
@@ -37,7 +51,7 @@ let cmpAplic = () => Number(cmpdisp) - Number(efmp);
 // 3 Custo de Material Secundário Disponivel
 let cmsDisp = () => Number(eims) + Number(cms);
 // 4 Custo de Material Secundário Aplicado
-let cmsAplic = () => Number(cmsDisp) - Number(efms); 
+let cmsAplic = () => Number(cmsDisp) - Number(efms);
 // 5 Custo de Material de Embalagem Disponivel
 let cmembDisp = () => Number(eimemb) + Number(cmemb);
 // 6 Custo de Material de Embalagem Aplicado
@@ -63,5 +77,16 @@ let cpv = () => Number(cpDispVenda) - Number(efpelab);
 
 
 submitBtn.onclick = (event) => {
-    alert(cpmdisp())
+    // alert(cmpdisp())
+    event.preventDefault();
+    containerData.classList.toggle('hide');
+    ContainerResults.classList.toggle('hide');
+
+    // alert('hello')
+}
+
+bckBtn.onclick = (event) => {
+    event.preventDefault();
+    containerData.classList.toggle('hide');
+    ContainerResults.classList.toggle('hide');
 }
