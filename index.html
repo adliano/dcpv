@@ -117,7 +117,13 @@
             <!-- Estoque Final de Material de Embalagem -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" id="efmemb" required>
-                <label for="efmemb">EFMs</label>
+                <label for="efmemb">EFMEmb</label>
+            </div>
+
+            <!-- Estoque Final de Produção (Elaboração/Fabricação) -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="efpelab" required>
+                <label for="efpelab">EFProd Elaboração</label>
             </div>
 
             <!-- Estoque Final de Produção Acabado -->
@@ -126,11 +132,7 @@
                 <label for="efpacabado">EFProd Acabado</label>
             </div>
 
-            <!-- Estoque Final de Produção (Elaboração/Fabricação) -->
-            <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="efpelab" required>
-                <label for="efpelab">EFProd Elaboração</label>
-            </div>
+
 
             <div class="col">
                 <button type="submit" class="btn btn-secondary mb-5 mt-3">Calcular</button>
@@ -144,7 +146,7 @@
     </div>
 
     <!-- SHOW RESULTS -->
-<!-- HIDE -->
+    <!-- HIDE -->
     <div class="container mt-2 " id="showResults">
 
         <div class="col-12 m-3">
@@ -253,74 +255,74 @@
                     <tr>
                         <td class="text-end">10.1</td>
                         <td>MATERIAIS INDIRETOS</td>
-                        <td></td>
+                        <td class="materiais-indiretos text-lef"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="text-end">10.2</td>
                         <td>MÃO DE OBRA INDIRETA</td>
-                        <td></td>
+                        <td class="mao-obra-indireta text-lef"></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="text-end">10.3</td>
                         <td>GASTOS GERAIS DE FABRICAÇÃO INDIRETOS</td>
-                        <td></td>
-                        <td></td>
+                        <td class="custo-indireto-fabricacao text-lef"></td>
+                        <td class="gastos-gerais-producao-indireto text-end"></td>
                     </tr>
                     <tr>
                         <td>11. (=)</td>
                         <td>CUSTO DE PRODUÇÃO DO PERÍODO (9+10)</td>
                         <td></td>
-                        <td></td>
+                        <td class="custo-producao-periodo text-end"></td>
                     </tr>
                     <tr>
                         <td>12. (+)</td>
                         <td>ESTOQUE INICIAL DE PRODUTOS EM ELABORAÇÃO</td>
                         <td></td>
-                        <td></td>
+                        <td class="estoque-inicial-elaboracao text-end"></td>
                     </tr>
                     <tr>
                         <td>13. (=)</td>
                         <td>CUSTO DE PRODUÇÃO (11+12)</td>
                         <td></td>
-                        <td></td>
+                        <td class="custo-producao text-end"></td>
                     </tr>
                     <tr>
                         <td>14. (-)</td>
                         <td>ESTOQUE FINAL DE PRODUTOS EM ELABORAÇÃO</td>
                         <td></td>
-                        <td></td>
+                        <td class="estoque-final-elaboracao text-end"></td>
                     </tr>
                     <tr>
                         <td>15. (=)</td>
                         <td>CUSTO DA PRODUÇÃO ACABADA NO PERÍODO (13-14)</td>
                         <td></td>
-                        <td></td>
+                        <td class="custo-producao-acabada text-end"></td>
                     </tr>
                     <tr>
                         <td>16. (+)</td>
                         <td>ESTOQUE INICIAL DE PRODUTOS ACABADOS</td>
                         <td></td>
-                        <td></td>
+                        <td class="estoque-inicial-ababados text-end"></td>
                     </tr>
                     <tr>
                         <td>17 (=)</td>
                         <td>CUSTO DOS PRODUTOS DISPONÍVEIS PARA VENDA (15+16)</td>
                         <td></td>
-                        <td></td>
+                        <td class="custo-prod-disp-venda text-end"></td>
                     </tr>
                     <tr>
                         <td>18. (-)</td>
                         <td>ESTOQUE FINAL DE PRODUTOS ACABADOS</td>
                         <td></td>
-                        <td></td>
+                        <td class="estoque-final-prod-acabado text-end"></td>
                     </tr>
                     <tr>
                         <td>19. (=)</td>
                         <td>CUSTO DOS PRODUTOS VENDIDOS (17-18)</td>
                         <td></td>
-                        <td></td>
+                        <td class="custo-produtos-vendidos text-end"></td>
                     </tr>
                 </tbody>
             </table>
@@ -346,3 +348,5 @@
 </body>
 
 </html>
+
+<!-- cmindireto -->
