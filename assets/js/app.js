@@ -48,35 +48,43 @@ let bckBtn = document.getElementById('voltarBtn');
             // console.log(cmsDisp)
             // 4 CMSAplic = CMSDisp - EFMS
             // Custo de Material Secundário Aplicado = Custo de Material Secundário Disponivel - Estoque Final de Material Secundário
-            let cmsAplic = cmsDisp - Number(document.getElementById('efms').value);
+            let estoqueFinalMaterialSecondario = Number(document.getElementById('efms').value);
+            let cmsAplic = cmsDisp - estoqueFinalMaterialSecondario;
             // console.log(cmsAplic)
             // 5 CMembDisp = EIMEmb + CMEmb
             // Custo de Material de Embalagem Disponivel = Estoque Inical de Material de Embalagem + Compra de Material de Embalagem
-            let cmEmbDisp = Number(document.getElementById('eimemb').value) + Number(document.getElementById('cmemb').value);
+            let estoqueInicialMaterialEmbalagem = Number(document.getElementById('eimemb').value);
+            let compraMaterialEmbalagem = Number(document.getElementById('cmemb').value);
+            let cmEmbDisp =  estoqueInicialMaterialEmbalagem + compraMaterialEmbalagem;
             // console.log(cmEmbDisp)
             // 6 CMEmbAplic = CMEmbDisp - EFMEmb
             // Custo de Material de Embalagem Aplicado = Custo de Material de Embalagem Disponivel - Estoque Final de Material de Embalagem
-            let cmEmbAplic = cmEmbDisp - Number(document.getElementById('efmemb').value)
+            let estoqueFinalMaterialEmbalagem = Number(document.getElementById('efmemb').value);
+            let cmEmbAplic = cmEmbDisp - estoqueFinalMaterialEmbalagem;
             // console.log(cmEmbAplic)
             // 7 CPrim = CMEmbAplic + MOD
             // Custo Primário da Produção = Custo de Material de Embalagem Aplicado + Mão de obra DIRETA
-            let cPrim = cmEmbAplic + Number(document.getElementById('mod').value);
+            let maoObraDireto = Number(document.getElementById('mod').value);
+            let cPrim = cmEmbAplic + maoObraDireto;
             // 8 ∑ CD's = MPª + MSª + MEmbª + MOD
             // Custos DIRETOS de Fabricação = Matéria Prima Aplicada + Material Secundário Aplicado + Material de Embalagem Aplicado + Mão de obra DIRETA
-            let cds = cmpAplic + cmsAplic + cmEmbAplic + Number(document.getElementById('mod').value);
+            let cds = cmpAplic + cmsAplic + cmEmbAplic + maoObraDireto;
             // 9 ∑ CIF's = MOI + CIF
             // Custos INDIRETOS de Fabricação = Mão de obra INDIRETA + MATERIAIS INDIRETOS + MÃO DE OBRA INDIRETA + GASTOS GERAIS DE FABRICAÇÃO INDIRETOS
-            let cifs = Number(document.getElementById('moi').value)
-                + Number(document.getElementById('cmindireto').value)
-                + Number(document.getElementById('cif').value);
+            let maoObraIndireto = Number(document.getElementById('moi').value);
+            let custoMaterialIndireto = Number(document.getElementById('cmindireto').value);
+            let custoIndiretoFabricacao = Number(document.getElementById('cif').value);
+            let cifs = maoObraIndireto
+                + custoMaterialIndireto
+                + custoIndiretoFabricacao;
             // console.log(cifs)
             // 10 CPP = ∑ CD's + ∑ CIF's
             // Custos de Produção de Periodo = Custos DIRETOS de Fabricação + Custos INDIRETOS de Fabricação
             let cpp = cds + cifs
             // 11 CP = CPP + EiProd
             // Custos de Produção = Custos de Produção de Periodo + Estoque Inicial de Produção (Elaboração/Fabricação)
-            let eiProdElab = Number(document.getElementById('eiprodelab').value);
-            let cp = cpp + eiProdElab;
+            let estoqueInicialProducaoElaboracao = Number(document.getElementById('eiprodelab').value);;
+            let cp = cpp + estoqueInicialProducaoElaboracao;
             // 12 CProdAcab = CP - EFProd
             // Custos de Produção Acabada = Custos de Produção - Estoque Final de Produção (Elaboração/Fabricação)
             let efProfElab = Number(document.getElementById('efpelab').value);
@@ -130,21 +138,21 @@ let bckBtn = document.getElementById('voltarBtn');
             // 11. (=) CUSTO DE PRODUÇÃO DO PERÍODO (9+10)
             document.querySelector('.custo-producao-periodo').textContent = custoProducaoDireto + cifs;
             // 12. (+) ESTOQUE INICIAL DE PRODUTOS EM ELABORAÇÃO
-            document.querySelector('.estoque-inicial-elaboracao').textContent = eiProdElab;
+            document.querySelector('.estoque-inicial-elaboracao').textContent = estoqueInicialProducaoElaboracao;
             // 13. (=) CUSTO DE PRODUÇÃO (11+12)
-            document.querySelector('.custo-producao').textContent = custoProducaoDireto + cifs + eiProdElab;
+            document.querySelector('.custo-producao').textContent = custoProducaoDireto + cifs + estoqueInicialProducaoElaboracao;
             // 14. (-) ESTOQUE FINAL DE PRODUTOS EM ELABORAÇÃO
             document.querySelector('.estoque-final-elaboracao').textContent = `(${efProfElab})`;
             // 15. (=) CUSTO DA PRODUÇÃO ACABADA NO PERÍODO (13-14)
-            document.querySelector('.custo-producao-acabada').textContent = custoProducaoDireto + cifs + eiProdElab - efProfElab;
+            document.querySelector('.custo-producao-acabada').textContent = custoProducaoDireto + cifs + estoqueInicialProducaoElaboracao - efProfElab;
             // 16. (+) ESTOQUE INICIAL DE PRODUTOS ACABADOS
             document.querySelector('.estoque-inicial-ababados').textContent = eiProdAcabado;
             // 17 (=) CUSTO DOS PRODUTOS DISPONÍVEIS PARA VENDA (15+16)
-            document.querySelector('.custo-prod-disp-venda').textContent = custoProducaoDireto + cifs + eiProdElab - efProfElab + eiProdAcabado;
+            document.querySelector('.custo-prod-disp-venda').textContent = custoProducaoDireto + cifs + estoqueInicialProducaoElaboracao - efProfElab + eiProdAcabado;
             // 18. (-) ESTOQUE FINAL DE PRODUTOS ACABADOS
             document.querySelector('.estoque-final-prod-acabado').textContent = `(${efProdAcabado})`;
             // 19. (=) CUSTO DOS PRODUTOS VENDIDOS (17-18)
-            document.querySelector('.custo-produtos-vendidos').textContent = custoProducaoDireto + cifs + eiProdElab - efProfElab + eiProdAcabado - efProdAcabado;
+            document.querySelector('.custo-produtos-vendidos').textContent = custoProducaoDireto + cifs + estoqueInicialProducaoElaboracao - efProfElab + eiProdAcabado - efProdAcabado;
 
             /* ****************************************************************************
             Show Formulas
@@ -173,6 +181,61 @@ let bckBtn = document.getElementById('voltarBtn');
             ulCMSDisp.children[2].textContent = ` = ${cmsDisp}`;
 
             // 4 Custo de Matérial Secondário Aplicada ulCMSAplic
+            // Get the ul to set the values
+            let ulCMSAplic = document.getElementById('ulCMSAplic');
+            // Set the value for the second children
+            ulCMSAplic.children[1].textContent = ` = ${cmsDisp} - ${estoqueFinalMaterialSecondario}`;
+            ulCMSAplic.children[2].textContent = ` = ${cmsAplic}`;
+
+            // 5 Custo de Material de Embalagem Disponivel ulCMEmbDisp
+            // Get the ul to set the values
+            let ulCMEmbDisp = document.getElementById('ulCMEmbDisp');
+            // Set the value for the second children
+            ulCMEmbDisp.children[1].textContent = ` = ${estoqueInicialMaterialEmbalagem} + ${compraMaterialEmbalagem}`;
+            ulCMEmbDisp.children[2].textContent = ` = ${cmEmbDisp}`;
+
+            // 6 Custo de Material de Embalagem Aplicada ulCMEmbAplic
+            // Get the ul to set the values
+            let ulCMEmbAplic = document.getElementById('ulCMEmbAplic');
+            // Set the value for the second children
+            ulCMEmbAplic.children[1].textContent = ` = ${cmEmbDisp} - ${estoqueFinalMaterialEmbalagem}`;
+            ulCMEmbAplic.children[2].textContent = ` = ${cmEmbAplic}`;
+
+            // 7 Custo PRIMÁRIO da Produção ulCPRIM
+            // Get the ul to set the values
+            let ulCPRIM = document.getElementById('ulCPRIM');
+            // Set the value for the second children
+            ulCPRIM.children[1].textContent = ` = ${cmpAplic} + ${maoObraDireto}`;
+            ulCPRIM.children[2].textContent = ` = ${cPrim}`;
+
+            // 8 Custos Diretos de Fabricação da Produção do Período
+            // Get the ul to set the values
+            let ulCds = document.getElementById('ulCDs');
+            // Set the value for the second children
+            ulCds.children[1].textContent = ` = ${cmpAplic} + ${cmsAplic} + ${cmEmbAplic} + ${maoObraDireto}`;
+            ulCds.children[2].textContent = ` = ${cds}`;
+
+            // 9 Custos Indiretos de Fabricação do Período
+            // Get the ul to set the values
+            let ulCIFs = document.getElementById('ulCIFs');
+            // Set the value for the second children
+            ulCIFs.children[1].textContent = ` = ${maoObraIndireto} + ${custoMaterialIndireto} + ${custoIndiretoFabricacao}`;
+            ulCIFs.children[2].textContent = ` = ${cifs}`;
+
+            // 10 Custo de Produção do Período ulCPP
+            // Get the ul to set the values
+            let ulCPP = document.getElementById('ulCPP');
+            // Set the value for the second children
+            ulCPP.children[1].textContent = ` = ${cds} + ${cifs}`;
+            ulCPP.children[2].textContent = ` = ${cpp}`;
+
+            // 10 Custo de Produção do Período ulCPP
+            // Get the ul to set the values
+            let ulCP = document.getElementById('ulCP');
+            // Set the value for the second children
+            ulCPP.children[1].textContent = ` = ${cpp} + ${estoqueInicialProducaoElaboracao}`;
+            ulCPP.children[2].textContent = ` = ${cp}`;
+
 
 
 

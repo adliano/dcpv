@@ -371,8 +371,9 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><b>EiMP:</b> Estoque Inicial de Matéria-Prima</p>
-                            <p><b>CPM:</b> Compra de Matéria-Prima</p>
+                            <p><b>CMPDisp = EiMP + CMP</b></p>
+                            <p><b>EiMP:</b>Estoque Inicial de Matéria-Prima</p>
+                            <p><b>CPM:</b>Compra de Matéria-Prima</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -408,7 +409,8 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><b>CMPDisp:</b> Custo das Matérias-Primas disponíveis</p>
+                            <p><b>CMPAplic = CMPDisp - EFMP</b></p>
+                            <p><b>CMPDisp:</b>Custo das Matérias-Primas disponíveis</p>
                             <p><b>EFMP:</b> Estoque Final de Matéria-Prima</p>
                         </div>
                         <div class="modal-footer">
@@ -418,6 +420,7 @@
                 </div>
             </div>
         </div> <!-- END OF CMPAplic -->
+
 
         <!-- 3 CMSDisp: Custo de Material Secondario disponivel -->
         <div class="card col-lg-6 my-3">
@@ -445,6 +448,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                            <p><b>CMSDisp = EiMS + CMS</b></p>
                             <p><b>EiMS:</b> Estoque Inicial de Material Secondário</p>
                             <p><b>CMS:</b> Compra de Material Secondário</p>
                         </div>
@@ -456,9 +460,7 @@
             </div>
         </div> <!-- END OF CMSDisp -->
 
-
-
-        <!-- 4 CMSAplic: Custo de Material Secondário Aplicado TODO: -->
+        <!-- 4 CMSAplic: Custo de Material Secondário Aplicado -->
         <div class="card col-lg-6 my-3">
             <div class="card-header">
                 Custo de Matérial Secondário Aplicada
@@ -473,7 +475,7 @@
                 <li class="list-group-item"></li>
             </ul>
 
-            <!-- Dialog CMPAplic -->
+            <!-- Dialog CMSAplic -->
             <div class="modal fade" id="cmsaplicModal" tabindex="-1" aria-labelledby="cmsaplicModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -484,7 +486,8 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><b>CMSDisp:</b> Custo de Matérial Secondário Disponivel</p>
+                            <p><b>CMSAplic = CMSDisp - EFMS</b></p>
+                            <p><b>CMSDisp:</b>Custo de Matérial Secondário Disponivel</p>
                             <p><b>EFMS:</b> Estoque Final de Matérial Secondário</p>
                         </div>
                         <div class="modal-footer">
@@ -493,7 +496,294 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- END OF CMPAplic -->
+        </div> <!-- END OF CMSAplic -->
+
+        <!-- 5 CMEmbDisp: Custo de Matérial de Embalagem disponivel -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custo de Matérial de Embalagem disponivel
+            </div>
+            <ul class="list-group list-group-flush" id="ulCMEmbDisp">
+                <li class="list-group-item">5.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cmembdispModal">
+                        CMEmbDisp = EiMEmb + CMEmb
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog CMEmbDisp -->
+            <div class="modal fade" id="cmembdispModal" tabindex="-1" aria-labelledby="cmembdispModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="cmembdispModalLabel">
+                                Custo de Matérial de Embalagem disponivel
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>CMEmbDisp = EiMEmb + CMEmb</b></p>
+                            <p><b>EiMEmb:</b> Estoque Inicial de Matérial de Embalagem</p>
+                            <p><b>CMEmb:</b> Compra de Matérial de Embalagem</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF CMEmbDisp -->
+
+        <!-- 6 CMEmbAplic: Custo de Matérial de Embalagem Aplicado -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custo de Matérial de Embalagem Aplicado
+            </div>
+            <ul class="list-group list-group-flush" id="ulCMEmbAplic">
+                <li class="list-group-item">6.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cmembaplicModal">
+                        CMEmbAplic = CMEmbDisp - EFMEmb
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog CMEmbAplic -->
+            <div class="modal fade" id="cmembaplicModal" tabindex="-1" aria-labelledby="cmembaplicModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="cmembaplicModalLabel">
+                                Custo de Matérial de Embalagem Aplicado
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>CMEmbAplic = CMEmbDisp - EFMEmb</b></p>
+                            <p><b>CMEmbDisp:</b> Custo de Matérial de Embalagem disponivel</p>
+                            <p><b>EFMEmb:</b> Estoque Final de Matérial de Embalagem</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF CMEmbAplic -->
+
+        <!-- 7 CPRIM: Custo Primário da Produção do Período -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custo Primário da Produção do Período
+            </div>
+            <ul class="list-group list-group-flush" id="ulCPRIM">
+                <li class="list-group-item">7.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#ulCPRIMModal">
+                        CPRIM = CMPAplic + MOD
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog CMSAplic -->
+            <div class="modal fade" id="ulCPRIMModal" tabindex="-1" aria-labelledby="ulCPRIMModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="ulCPRIMModalLabel">
+                                Custo Primário da Produção do Período
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>CPRIM = CMPAplic + MOD</b></p>
+                            <p><b>CMPAplic:</b>Custo das Matérias-Primas Aplicado</p>
+                            <p><b>MOD:</b>Mão de Obra Direto</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF CPRIM -->
+
+        <!-- 8 ∑ CD's : Custos Diretos de Fabricação da Produção -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custos Diretos de Fabricação da Produção do Período
+            </div>
+            <ul class="list-group list-group-flush" id="ulCDs">
+                <li class="list-group-item">8.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#ulCDsModal">
+                        ∑ CD's = CMPAplic + CMSAplic + CMEmbAplic + MOD
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog ∑ CD's -->
+            <div class="modal fade" id="ulCDsModal" tabindex="-1" aria-labelledby="ulCDsModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="ulCDsModalLabel">
+                                Custos Diretos de Fabricação da Produção do Período
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>∑ CD's = CMPAplic + CMSAplic + CMEmbAplic + MOD</b></p>
+                            <p><b>CMPAplic</b> Custo das Matérias-Primas Aplicado</p>
+                            <p><b>CMSAplic:</b> Custo de Matérial Secondário Aplicado</p>
+                            <p><b>CMEmbAplic</b> Custo de Matérial de Embalagem Aplicado</p>
+                            <p><b>MOD:</b> Mão de Obra Direto</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF ∑ CD's -->
+
+        <!-- 9 ∑ CIF's : Custos Indiretos de Fabricação do Período -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custos Indiretos de Fabricação do Período (GGF)
+            </div>
+            <ul class="list-group list-group-flush" id="ulCIFs">
+                <li class="list-group-item">8.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#ulCIFsModal">
+                        ∑ CIF's = MOI + CIF
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog ∑ CIF's -->
+            <div class="modal fade" id="ulCIFsModal" tabindex="-1" aria-labelledby="ulCIFsModalModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="ulCIFsModalModalLabel">
+                                Custos Indiretos de Fabricação do Período
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>∑ CIF's = MOI + CMI + CIF</b></p>
+                            <p><b>MOI:</b> Mão de Obra Indireto</p>
+                            <p><b>CMI</b> Compra de Materiais Indireto</p>
+                            <p><b>CIF:</b> Custos Indireto de Fabricação</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF ∑ CIF's -->
+
+        <!-- 10 CPP : Custo de Produção do Período -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custo de Produção do Período
+            </div>
+            <ul class="list-group list-group-flush" id="ulCPP">
+                <li class="list-group-item">8.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#ulCPPModal">
+                        CPP = ∑ CD's + ∑ CIF's
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog CPP -->
+            <div class="modal fade" id="ulCPPModal" tabindex="-1" aria-labelledby="ulCPPModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="ulCPPModalLabel">
+                                Custo de Produção do Período
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>CPP = ∑ CD's + ∑ CIF's</b></p>
+                            <p><b>∑ CD's:</b> Custos Diretos de Fabricação da Produção do Período</p>
+                            <p><b>∑ CIF's:</b> Custos Indiretos de Fabricação do Período</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF CPP -->
+
+
+
+
+
+
+
+
+
+
+        <!-- 11 CP : Custo de Produção -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custo de Produção
+            </div>
+            <ul class="list-group list-group-flush" id="ulCP">
+                <li class="list-group-item">8.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#ulCPModal">
+                        CP = CPP + EiProd Elaboração
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog CPP -->
+            <div class="modal fade" id="ulCPModal" tabindex="-1" aria-labelledby="ulCPModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="ulCPModalLabel">
+                                Custo de Produção
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>CP = CPP + EiProd Elaboração</b></p>
+                            <p><b>CPP:</b> Custos de Produção do Período</p>
+                            <p><b>EiProd Elaboração:</b> Estoque Inicial de Produção Elaboração</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF CPP -->
+        
+
+
+
+
+
+
+
+
 
 
 
