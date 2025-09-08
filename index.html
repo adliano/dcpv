@@ -18,7 +18,7 @@
         </div>
     </nav>
 
-    <div class="container mt-3" id="colectData">
+    <div class="container mt-3 " id="colectData">
         <!-- FORM -->
         <form class="needs-validation" novalidate>
             <!-- ESTOQUE INICIAL -->
@@ -146,7 +146,10 @@
 
     </div>
 
-    <!-- SHOW RESULTS -->
+    <!-- ------------------------------------------
+    SHOW RESULTS 
+    Esse Container ira ser usado para mostar o DCPV
+    -------------------------------------------- -->
     <!-- HIDE -->
     <div class="container mt-2 hide" id="showResults">
 
@@ -331,7 +334,173 @@
         </div>
     </div>
 
+    <!-- TODO: Set Hide toggle -->
+    <!-- 
+    Formulas 
+    Esse Container ira ser usado para mostar o desenvolvimento das formulas
+    Ira mostar cada formula de acordo com os dados informados e quando o usuario
+    click na formula iras abrir um Dialog mostrando o sgnificado
+     -->
+    <div class="container my-5" id="show-formulas">
+        <h1 class="my-4">Desenvolvimento</h1>
 
+        <!-- 1 CMPDisp: Custo de Materia-Prima disponivel -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custo das Matérias-Primas disponíveis
+            </div>
+            <ul class="list-group list-group-flush" id="ulCMPDisp">
+                <li class="list-group-item"> 1.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cmpdispModal">
+                        CMPDisp = EiMP + CMP
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog CMPDisp -->
+            <div class="modal fade" id="cmpdispModal" tabindex="-1" aria-labelledby="cmpdispModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="cmpdispModaleModalLabel">
+                                Custo Das Matérias-Primas disponíveis
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>EiMP:</b> Estoque Inicial de Matéria-Prima</p>
+                            <p><b>CPM:</b> Compra de Matéria-Prima</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF CMPDisp -->
+
+        <!-- 2 CMPAplic: Custo de Materia-Prima Aplicado -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custo das Matérias-Primas Aplicado
+            </div>
+            <ul class="list-group list-group-flush" id="ulCMPAplic">
+                <li class="list-group-item">2.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cmpaplicModal">
+                        CMPAplic = CMPDisp - EFMP
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog CMPAplic -->
+            <div class="modal fade" id="cmpaplicModal" tabindex="-1" aria-labelledby="cmpaplicModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="cmpaplicModalLabel">
+                                Custo das Matérias-Primas Aplicado
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>CMPDisp:</b> Custo das Matérias-Primas disponíveis</p>
+                            <p><b>EFMP:</b> Estoque Final de Matéria-Prima</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF CMPAplic -->
+
+        <!-- 3 CMSDisp: Custo de Material Secondario disponivel -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custo de Matérial Secondário Disponivel
+            </div>
+            <ul class="list-group list-group-flush" id="ulCMSDisp">
+                <li class="list-group-item">3.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cmsdispModal">
+                        CMSDisp = EiMS + CMS
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog CMSDisp -->
+            <div class="modal fade" id="cmsdispModal" tabindex="-1" aria-labelledby="cmsdispModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="cmsdispModalModalLabel">
+                                Custo de Matérial Secondário Disponivel
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>EiMS:</b> Estoque Inicial de Material Secondário</p>
+                            <p><b>CMS:</b> Compra de Material Secondário</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF CMSDisp -->
+
+
+
+        <!-- 4 CMSAplic: Custo de Material Secondário Aplicado TODO: -->
+        <div class="card col-lg-6 my-3">
+            <div class="card-header">
+                Custo de Matérial Secondário Aplicada
+            </div>
+            <ul class="list-group list-group-flush" id="ulCMSAplic">
+                <li class="list-group-item">4.
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cmsaplicModal">
+                        CMSAplic = CMSDisp - EFMS
+                    </button>
+                </li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+
+            <!-- Dialog CMPAplic -->
+            <div class="modal fade" id="cmsaplicModal" tabindex="-1" aria-labelledby="cmsaplicModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="cmsaplicModalLabel">
+                                Custo de Matérial Secondário Aplicada
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>CMSDisp:</b> Custo de Matérial Secondário Disponivel</p>
+                            <p><b>EFMS:</b> Estoque Final de Matérial Secondário</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF CMPAplic -->
+
+
+
+
+
+
+    </div> <!-- END OF FORMULAS CONTAINER -->
 
 
     <!-- Scripts -->

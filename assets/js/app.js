@@ -31,15 +31,20 @@ let bckBtn = document.getElementById('voltarBtn');
 
             // 1 CMPDisp = EiMP + CMP
             // Custo de Materia Prima Disponivel = Estoque Inical de Materia Prima + Compra de Materia Prima
-            let cmpDisp = Number(document.getElementById('eimp').value) + Number(document.getElementById('cmp').value);
+            let estoqueInicialMateriaPrima = Number(document.getElementById('eimp').value);
+            let compraMateriaPrima = Number(document.getElementById('cmp').value)
+            let cmpDisp = estoqueInicialMateriaPrima + compraMateriaPrima;
             // console.log(cmpDisp);
             // 2 CMPAplic = CMPdisp - EFMP
             // Custo de Materia Prima Aplicada = Custo de Materia Prima Disponivel - Estoque Final de Materia Prima
-            let cmpAplic = cmpDisp - Number(document.getElementById('efmp').value);
+            let estoqueFinalMateriaPrima = Number(document.getElementById('efmp').value);
+            let cmpAplic = cmpDisp - estoqueFinalMateriaPrima;
             // console.log(cmpAplic);
             // 3  CMSDisp = EIMS + CMS
             // Custo de Material Secundário Disponivel = Estoque Inical de Material Secundário + Compra de Material Secundário
-            let cmsDisp = Number(document.getElementById('eims').value) + Number(document.getElementById('cms').value);
+            let estoqueInicialMaterialSecondario = Number(document.getElementById('eims').value);
+            let compraMaterialSecondario = Number(document.getElementById('cms').value);
+            let cmsDisp =  estoqueInicialMaterialSecondario + compraMaterialSecondario;
             // console.log(cmsDisp)
             // 4 CMSAplic = CMSDisp - EFMS
             // Custo de Material Secundário Aplicado = Custo de Material Secundário Disponivel - Estoque Final de Material Secundário
@@ -140,6 +145,45 @@ let bckBtn = document.getElementById('voltarBtn');
             document.querySelector('.estoque-final-prod-acabado').textContent = `(${efProdAcabado})`;
             // 19. (=) CUSTO DOS PRODUTOS VENDIDOS (17-18)
             document.querySelector('.custo-produtos-vendidos').textContent = custoProducaoDireto + cifs + eiProdElab - efProfElab + eiProdAcabado - efProdAcabado;
+
+            /* ****************************************************************************
+            Show Formulas
+            Code abaixo e usado no container onde mostra as formulas e seu desenvolvimento
+            ***************************************************************************** */
+
+            // 1 Custo de Materia-Prima Disponivel
+            // Get the ul to set the values
+            let ulCMPDisp = document.getElementById('ulCMPDisp');
+            // Set the value for the second children
+            ulCMPDisp.children[1].textContent = ` = ${estoqueInicialMateriaPrima} + ${compraMateriaPrima}`;
+            ulCMPDisp.children[2].textContent = ` = ${cmpDisp}`;
+
+            // 2 Custo de Materia Prima Aplicada ulCMPAplic
+            // // Get the ul to set the values
+            let ulCMPAplic = document.getElementById('ulCMPAplic');
+            // Set the value for the second children
+            ulCMPAplic.children[1].textContent = ` = ${cmpDisp} - ${estoqueFinalMateriaPrima}`;
+            ulCMPAplic.children[2].textContent = ` = ${cmpAplic}`;
+
+            // 3 Custo de Material Secondario Disponivel ulCMSDisp
+            // Get the ul to set the values
+            let ulCMSDisp = document.getElementById('ulCMSDisp');
+            // Set the value for the second children
+            ulCMSDisp.children[1].textContent = ` = ${estoqueInicialMaterialSecondario} + ${compraMaterialSecondario}`;
+            ulCMSDisp.children[2].textContent = ` = ${cmsDisp}`;
+
+            // 4 Custo de Matérial Secondário Aplicada ulCMSAplic
+
+
+
+
+
+
+
+
+
+
+
         }
 
         form.classList.add('was-validated')
@@ -155,4 +199,5 @@ bckBtn.onclick = (event) => {
 
 }
 
-// cmindireto efpelab eiprodelab eiprodacab efpacabado 
+
+
